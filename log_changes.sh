@@ -1,11 +1,11 @@
 -- log_changes.sql (SQLcl script with human-readable changelog)
  
-accept oldBranch char prompt 'Enter OLD branch/tag: '
-accept newBranch char prompt 'Enter NEW branch/tag: '
- 
+ACCEPT oldBranch char prompt 'Enter OLD branch/tag: '
+ACCEPT newBranch char prompt 'Enter NEW branch/tag: '
+
 -- Create reports folder
 host mkdir reports 2>nul
- 
+
 -- Always sync remote
 host git fetch --all
  
@@ -23,4 +23,4 @@ host echo "- Full patch stored in diff_&oldBranch._to_&newBranch..patch" >> repo
 host echo. >> reports/CHANGELOG_USER_&newBranch..md
 host echo "This file is meant for business stakeholders and QA reviewers." >> reports/CHANGELOG_USER_&newBranch..md
  
-prompt ✅ Human-readable CHANGELOG created: reports/CHANGELOG_USER_&newBranch..md
+prompt Human-readable CHANGELOG created: reports/CHANGELOG_USER_&newBranch..md

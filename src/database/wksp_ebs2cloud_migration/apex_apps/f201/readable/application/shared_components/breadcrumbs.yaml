@@ -19,3 +19,17 @@
         url: 'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
         page: 1 # Home
 
+  - # ====== Entry: changes ======================================
+    id: 27378344129773117
+    identification: 
+      name: changes
+      page-number: 2
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:2:&APP_SESSION.::&DEBUG.:::'
+        page: 2 # changes
+

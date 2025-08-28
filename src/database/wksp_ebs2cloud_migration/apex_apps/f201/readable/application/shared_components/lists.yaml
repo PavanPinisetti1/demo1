@@ -5,7 +5,7 @@
     name: Navigation Menu
 
   subscription: 
-    version-number: 12213523224963
+    version-number: 12213523596492
 
   source: 
     type: Static Values
@@ -36,10 +36,10 @@
     user-defined-attributes: 
       translatable: false
 
-  - # ====== Entry: Tracking Changes =============================
-    id: 24767107546889394
+  - # ====== Entry: changes ======================================
+    id: 27377426944773109
     label: 
-      label: Tracking Changes
+      label: changes
 
     icon: 
       image/icon-css-classes: fa-file-o
@@ -55,7 +55,7 @@
     link: 
       target: 
         url: 'f?p=&APP_ID.:2:&APP_SESSION.::&DEBUG.:::'
-        page: 2 # Tracking Changes
+        page: 2 # changes
 
     click-counting: 
       count-clicks: false

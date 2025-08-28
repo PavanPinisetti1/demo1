@@ -1,0 +1,7 @@
+ app_exp_change.sh                                  |  3 +
+ .../apex_apps/f201/f201.sql                        | 68 +++++++---------------
+ .../apex_apps/f201/readable/application/f201.yaml  |  2 +-
+ .../f201/readable/application/pages/p00002.yaml    | 57 ++++++++++++++++++
+ .../application/shared_components/breadcrumbs.yaml | 14 -----
+ .../application/shared_components/lists.yaml       | 29 +--------
+ 6 files changed, 83 insertions(+), 90 deletions(-)
