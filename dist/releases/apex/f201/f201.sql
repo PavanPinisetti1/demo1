@@ -37,9 +37,9 @@ prompt APPLICATION 201 - CICD_DEMO
 --   Flashback:       0
 --   Export Type:     Application Export
 --     Pages:                      4
---       Items:                    5
+--       Items:                    3
 --       Processes:                4
---       Regions:                  3
+--       Regions:                  4
 --       Buttons:                  1
 --     Shared Components:
 --       Logic:
@@ -47,7 +47,7 @@ prompt APPLICATION 201 - CICD_DEMO
 --       Navigation:
 --         Lists:                  2
 --         Breadcrumbs:            1
---           Entries:              1
+--           Entries:              2
 --       Security:
 --         Authentication:         1
 --         Authorization:          1
@@ -105,7 +105,7 @@ wwv_imp_workspace.create_flow(
 ,p_substitution_value_01=>'CICD_DEMO'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>6
-,p_version_scn=>12213523225132
+,p_version_scn=>12213523701885
 ,p_print_server_type=>'INSTANCE'
 ,p_file_storage=>'DB'
 ,p_is_pwa=>'Y'
@@ -141,7 +141,7 @@ wwv_flow_imp_shared.create_list(
  p_id=>wwv_flow_imp.id(9330905776792297)
 ,p_name=>'Navigation Menu'
 ,p_list_status=>'PUBLIC'
-,p_version_scn=>12213523224963
+,p_version_scn=>12213523701885
 );
 wwv_flow_imp_shared.create_list_item(
  p_id=>wwv_flow_imp.id(9342519448792521)
@@ -152,13 +152,13 @@ wwv_flow_imp_shared.create_list_item(
 ,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_imp_shared.create_list_item(
- p_id=>wwv_flow_imp.id(24767107546889394)
+ p_id=>wwv_flow_imp.id(27380064944913810)
 ,p_list_item_display_sequence=>20
-,p_list_item_link_text=>'Tracking Changes'
-,p_list_item_link_target=>'f?p=&APP_ID.:2:&APP_SESSION.::&DEBUG.:::'
+,p_list_item_link_text=>'VBVBVBV'
+,p_list_item_link_target=>'f?p=&APP_ID.:3:&APP_SESSION.::&DEBUG.:::'
 ,p_list_item_icon=>'fa-file-o'
 ,p_list_item_current_type=>'COLON_DELIMITED_PAGE_LIST'
-,p_list_item_current_for_pages=>'2'
+,p_list_item_current_for_pages=>'3'
 );
 end;
 /
@@ -883,6 +883,12 @@ wwv_flow_imp_shared.create_menu_option(
 ,p_link=>'f?p=&APP_ID.:1:&APP_SESSION.::&DEBUG.:::'
 ,p_page_id=>1
 );
+wwv_flow_imp_shared.create_menu_option(
+ p_id=>wwv_flow_imp.id(27380992619913814)
+,p_short_name=>'VBVBVBV'
+,p_link=>'f?p=&APP_ID.:3:&APP_SESSION.::&DEBUG.:::'
+,p_page_id=>3
+);
 end;
 /
 prompt --application/shared_components/navigation/breadcrumbentry
@@ -1061,49 +1067,30 @@ wwv_flow_imp_page.create_page_plug(
   'expand_shortcuts', 'N',
   'output_as', 'HTML')).to_clob
 );
-wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(25073963995377801)
-,p_name=>'P1_NAME'
-,p_item_sequence=>10
-,p_prompt=>'Name'
-,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>30
-,p_field_template=>1609121967514267634
-,p_item_template_options=>'#DEFAULT#'
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'disabled', 'N',
-  'submit_when_enter_pressed', 'N',
-  'subtype', 'TEXT',
-  'trim_spaces', 'BOTH')).to_clob
-);
 end;
 /
-prompt --application/pages/page_00002
+prompt --application/pages/page_00003
 begin
 wwv_flow_imp_page.create_page(
- p_id=>2
-,p_name=>'Tracking Changes'
-,p_alias=>'TRACKING-CHANGES'
-,p_step_title=>'Tracking Changes'
+ p_id=>3
+,p_name=>'VBVBVBV'
+,p_alias=>'VBVBVBV'
+,p_step_title=>'VBVBVBV'
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_protection_level=>'C'
-,p_page_component_map=>'11'
 );
-wwv_flow_imp_page.create_page_item(
- p_id=>wwv_flow_imp.id(26581660065181402)
-,p_name=>'P2_DEMO'
-,p_item_sequence=>10
-,p_prompt=>'Demo'
-,p_display_as=>'NATIVE_TEXT_FIELD'
-,p_cSize=>30
-,p_field_template=>1609121967514267634
-,p_item_template_options=>'#DEFAULT#'
-,p_attributes=>wwv_flow_t_plugin_attributes(wwv_flow_t_varchar2(
-  'disabled', 'N',
-  'submit_when_enter_pressed', 'N',
-  'subtype', 'TEXT',
-  'trim_spaces', 'BOTH')).to_clob
+wwv_flow_imp_page.create_page_plug(
+ p_id=>wwv_flow_imp.id(27380415435913812)
+,p_plug_name=>'Breadcrumb'
+,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>2531463326621247859
+,p_plug_display_sequence=>10
+,p_plug_display_point=>'REGION_POSITION_01'
+,p_menu_id=>wwv_flow_imp.id(9330404222792287)
+,p_plug_source_type=>'NATIVE_BREADCRUMB'
+,p_menu_template_id=>4072363345357175094
 );
 end;
 /
@@ -1330,4 +1317,4 @@ prompt  ...done
 
 
 
--- sqlcl_snapshot {"hash":"193b25f3b80b99fcd6d697496be1dc1b4c74d79d","type":"APEX_APPLICATIONS","name":"f201","schemaName":"WKSP_EBS2CLOUD_MIGRATION","sxml":""}
+-- sqlcl_snapshot {"hash":"6ce11530d93af51b44801a8e92cd07c024a0e7d5","type":"APEX_APPLICATIONS","name":"f201","schemaName":"WKSP_EBS2CLOUD_MIGRATION","sxml":""}

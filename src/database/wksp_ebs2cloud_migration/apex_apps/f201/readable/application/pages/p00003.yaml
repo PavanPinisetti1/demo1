@@ -1,10 +1,10 @@
 ---
-# ====== Page: new_page ======================================
+# ====== Page: VBVBVBV =======================================
 id: 3
 identification: 
-  name: new_page
-  alias: NEW-PAGE
-  title: new_page
+  name: VBVBVBV
+  alias: VBVBVBV
+  title: VBVBVBV
 
 appearance: 
   page-mode: Normal
@@ -38,7 +38,7 @@ server-cache:
 
 regions: 
 - # ====== Region: Breadcrumb ==================================
-  id: 26587613659187890
+  id: 27380415435913812
   identification: 
     name: Breadcrumb
     type: Breadcrumb
