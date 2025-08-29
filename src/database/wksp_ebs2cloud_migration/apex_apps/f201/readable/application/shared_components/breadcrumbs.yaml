@@ -33,3 +33,17 @@
         url: 'f?p=&APP_ID.:3:&APP_SESSION.::&DEBUG.:::'
         page: 3 # VBVBVBV
 
+  - # ====== Entry: new ==========================================
+    id: 27717238161234318
+    identification: 
+      name: new
+      page-number: 2
+
+    execution: 
+      sequence: 10
+
+    link: 
+      target: 
+        url: 'f?p=&APP_ID.:2:&APP_SESSION.::&DEBUG.:::'
+        page: 2 # new
+
